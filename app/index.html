@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>Planificateur de repas</title>
+        <script src="https://unpkg.com/vue"></script>
+    </head>
+
+    <body>
+        <div id="app">
+            <h1>Ajouter un repas</h1>
+            <input placeholder="Nom du repas" v-model="monRepas.nom" />
+            <input placeholder="Ingrédient principal" v-model="monRepas.ingredient" />
+            <button v-on:click="ajouterRepas(monRepas)">Ajouter mon repas</button>
+
+
+            <h1>Liste des repas</h1>
+            <ul>
+                <li v-for="(repas, index) in mesRepas">
+                    {{ repas.nom }} :: {{ repas.ingredient }}
+                </li>
+            </ul>
+        </div>
+
+        <script src="./scripts/app.js"></script>
+    </body>
+
+</html>
